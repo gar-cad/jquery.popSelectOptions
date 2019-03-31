@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<style>
+            body {
+                background-color: #f4f4f4;
+            }
+            main {
+                border: 1px solid #BBB;
+                background-color: #fff;
+            }
+        </style>
+		<title>jquery.popSelectOpions</title>
+	</head>
+    <body>
+		<main role="main" class="rounded container my-2">
+            <h1>jquery.popSelectOpions</h1>
+            <h2>Author: <a href="https://github.com/gar-cad" rel="author">Gareth Cadwaladr</a></h2>
+            <p class="text-muted">A simple jquery plugin to populate a select element(s) with options from an array. It takes 2 parameters:</p>
+            <ol>
+                <li><code>options</code>: An array of dictionaries, storing the <code>value</code> of each option tag, and the <code>label</code> to display. Default: <code>[{'value': '-', 'label': 'Default option'}]</code></li>
+                <li><code>default</code>: The position in the <code>options</code> array to use as the default item. Default: <code>0</code></li>
+            </ol>
+            <nav class="list-group">
+                <a href="#example1" class="list-group-item list-group-item-action">Basic usage</a>
+            </nav>
+            <article class="card border-success my-4" id="example1">
+                <div class="card-header text-white bg-success">
+                Basic usage
+                </div>
+                <div class="card-body border-success">
+                    <!-- example -->
+                    <div class="card border-danger my-3">
+                        <div class="card-header text-white bg-danger">Example</div>
+                        <div class="card-body py-0">
+                            <div class="form-row my-2">
+                                <div class="form-group col-md-4"><label for="distance">Distance</label>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <select id="distance" class="form-control"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- html -->
+                    <div class="card border-warning my-3">
+                        <div class="card-header text-white bg-warning">html</div>
+                        <div class="card-body py-0">
+                            <pre><code>
+&lt;div class="form-row my-2"&gt;
+    &lt;div class="form-group col-md-4"&gt;
+        &lt;label for="distance"&gt;Distance&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-8"&gt;
+        &lt;select id="distance" class="form-control"&gt;&lt;/select&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                    
+                    <!-- javascript -->
+                    <div class="card border-warning my-3">
+                        <div class="card-header text-white bg-warning">javascript</div>
+                        <div class="card-body py-0">
+                            <pre><code>
+&lt;script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="../dist/jquery.popSelectOptions.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    var distances = [
+        {'value': '1609.34', 'label': 'Mile(s)'},
+        {'value': '1000', 'label': 'Kilometre(s)'},
+        {'value': '1', 'label': 'Metre(s)'},
+        {'value': '0.9144', 'label': 'Yard(s)'},
+        {'value': '0.3048', 'label': 'Feet'}
+    ];
+    $(function() {
+        $('#distance').popSelectOptions({'options': distances, 'default':2});
+    })
+&lt;/script&gt;
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <footer>
+                <small class="text-secondary">&copy; Gareth Cadwaladr 2019</small>
+            </footer>
+        </main>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="../dist/jquery.popSelectOptions.min.js"></script>
+        <script>
+            var distances = [
+                {'value': '1609.34', 'label': 'Mile(s)'},
+                {'value': '1000', 'label': 'Kilometre(s)'},
+                {'value': '1', 'label': 'Metre(s)'},
+                {'value': '0.9144', 'label': 'Yard(s)'},
+                {'value': '0.3048', 'label': 'Feet'}
+            ];
+            $(function() {
+                $('#distance').popSelectOptions({'options': distances, 'default':2});
+            })
+        </script>
+    </body>
+</html>
